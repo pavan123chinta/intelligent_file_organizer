@@ -1,146 +1,148 @@
-#  Intelligent File Organizer
+Intelligent File Organizer
 
-A professional-grade Python CLI tool that automatically organizes files into categorized folders based on file extensions.  
-Includes logging, dry-run mode, execution metrics, and auto-generated reports.
+A CLI-based Python automation tool that organizes files into categories and detects duplicate files using content-based hashing.
 
----
+Overview
 
-##  Features
+Intelligent File Organizer is a modular Python automation project designed to:
 
-- Organizes files by extension (Images, Documents, Videos, Audio, etc.)
-- Automatic category folder creation
-- Dry Run mode (simulate without moving files)
-- Execution metrics tracking
-- Auto-generated detailed report
-- Centralized logging system
-- Clean modular architecture
-- CLI-based execution
+Automatically organize files into categorized folders
 
----
+Detect duplicate files using hash comparison
 
-##  Project Structure
+Safely remove or move duplicates
 
+Generate execution reports
+
+Provide CLI options including dry-run mode
+
+This project demonstrates clean architecture, modular design, and safe file automation practices.
+
+Features
+File Categorization
+
+Automatically organizes files into folders:
+
+Images
+
+Documents
+
+Videos
+
+Audio
+
+File types are mapped using configuration from config.json.
+
+Duplicate Detection
+
+Uses content-based hashing
+
+Identifies files with identical content
+
+Supports duplicate movement to a Duplicates folder
+
+Optional dry-run mode for safe testing
+
+Dry Run Mode
+
+Run safely without modifying files:
+
+python main.py --path test_files --remove-duplicates --dry-run
+
+
+This shows what would happen without actually moving files.
+
+Execution Reporting
+
+Generates structured reports inside:
+
+reports/
+
+
+Report includes:
+
+Total files scanned
+
+Files moved
+
+Folders created
+
+Unknown files
+
+Total duplicates found
+
+Duplicates moved
+
+Logging
+
+Structured logging system using Python logging module:
+
+INFO
+
+WARNING
+
+ERROR
+
+Project Structure
 intelligent_file_organizer/
 │
 ├── organizer/
-│ ├── logger_config.py
-│ ├── utils.py
-│ ├── file_manager.py
-│ ├── reporter.py
-│ └── duplicate_handler.py
+│   ├── file_manager.py
+│   ├── duplicate_handler.py
+│   ├── reporter.py
+│   ├── logger_config.py
+│   └── utils.py
+│
+├── test_files/
+├── reports/
+├── logs/
 │
 ├── config.json
 ├── main.py
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
 
-
-##  Installation
-
-1️ Clone the repository:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/intelligent_file_organizer.git
+Installation
+1. Clone the repository
+git clone https://github.com/pavan123chinta/intelligent_file_organizer.git
 cd intelligent_file_organizer
 
-2️ Install dependencies:
+2. Create virtual environment (Recommended)
+python -m venv venv
+venv\Scripts\activate
 
+3. Install dependencies
 pip install -r requirements.txt
 
 Usage
-Normal Mode
-Organizes files inside the specified folder:
-
+Basic Run
 python main.py --path test_files
- Dry Run Mode (Safe Mode)
-Simulates file organization without moving files:
 
-python main.py --path test_files --dry-run
+Remove Duplicates
+python main.py --path test_files --remove-duplicates
 
-Sample Output
-INFO | Intelligent File Organizer Application Started
-INFO | Loaded categories: ['Images', 'Documents', 'Videos', 'Audio']
-INFO | Moved 'photo.jpg' to 'Images' folder.
-WARNING | No category found for file: unknown.xyz
+Safe Mode (Dry Run)
+python main.py --path test_files --remove-duplicates --dry-run
 
------ Execution Summary -----
-Total files scanned: 6
-Files moved: 3
-Folders created: 0
-Unknown files: 3
+Technical Concepts Demonstrated
 
-Generated Report
-Each run generates a timestamped report inside the reports/ directory:
+File handling and OS operations
 
-Example:
+Directory traversal
 
-reports/report_20260218_173046.txt
-Report includes:
+Hash-based duplicate detection
 
-Execution Mode
+CLI argument parsing using argparse
 
-Target Path
+Logging configuration
 
-Files Scanned
+Report generation
 
-Files Moved
+Modular architecture
 
-Folders Created
-
-Unknown Files
-
-How It Works
-
-Loads category rules from config.json
-
-Scans the target directory
-
-Matches file extensions to categories
-
-Creates folders if needed
-
-Moves files (or simulates in dry-run mode)
-
-Tracks execution metrics
-
-Generates summary report
-
-Tech Stack
-
-Python 3.13
-
-argparse (CLI handling)
-
-logging (Centralized logging)
-
-os & shutil (File operations)
-
-JSON (Configuration management)
-
-Use Cases
-
-Desktop file cleanup
-
-Automation practice project
-
-Python CLI development learning
-
-SDET / Automation portfolio project
-
-Future Improvements
-
-Duplicate file detection
-
-GUI version
-
-Configurable logging level
-
-Unit test coverage
-
-Cloud storage integration
+Version control using Git
 
 Author
 
 Pavan Chinta
-Automation & Python Enthusiast
+Automation Engineer | Python Enthusiast
