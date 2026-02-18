@@ -5,5 +5,8 @@ __pycache__/
 # Log files
 logs/
 
-# VS Code settings (optional but good practice)
+# Test runtime folder
+test_files/
+
+# VS Code settings
 .vscode/
