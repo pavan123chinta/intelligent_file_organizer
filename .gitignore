@@ -5,7 +5,10 @@ __pycache__/
 # Log files
 logs/
 
-# Test runtime folder
+# Generated reports
+reports/
+
+# test data
 test_files/
 
 # VS Code settings
