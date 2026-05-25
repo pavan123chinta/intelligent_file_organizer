@@ -4,7 +4,7 @@ A CLI-based Python automation tool that organizes files into categories and dete
 
 Overview
 
-Intelligent File Organizer is a modular Python automation project designed to:
+Intelligent File Organizer is a Python automation project designed to:
 
 Automatically organize files into categorized folders
 
@@ -16,7 +16,7 @@ Generate execution reports
 
 Provide CLI options including dry-run mode
 
-This project demonstrates clean architecture, modular design, and safe file automation practices.
+This project demonstrates modular architecture, safe file handling, and Python automation practices.
 
 Features
 File Categorization
@@ -145,4 +145,4 @@ Version control using Git
 Author
 
 Pavan Chinta
-Automation Engineer | Python Enthusiast
+QA Automation Engineer | Python Automation | API & UI Testing
