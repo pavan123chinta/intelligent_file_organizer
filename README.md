@@ -1,89 +1,79 @@
-Intelligent File Organizer
+# Intelligent File Organizer
 
-A CLI-based Python automation tool that organizes files into categories and detects duplicate files using content-based hashing.
+A Python-based automation tool that organizes files into categories and detects duplicate files using content-based hashing.
 
-Overview
+## Overview
 
-Intelligent File Organizer is a Python automation project designed to:
+Intelligent File Organizer is designed to:
 
-Automatically organize files into categorized folders
-
-Detect duplicate files using hash comparison
-
-Safely remove or move duplicates
-
-Generate execution reports
-
-Provide CLI options including dry-run mode
+- Automatically organize files into categorized folders
+- Detect duplicate files using hash comparison
+- Safely remove or move duplicates
+- Generate execution reports
+- Support CLI options including dry-run mode
 
 This project demonstrates modular architecture, safe file handling, and Python automation practices.
 
-Features
-File Categorization
+---
 
-Automatically organizes files into folders:
+## Features
 
-Images
+### File Categorization
 
-Documents
+Automatically organizes files into folders such as:
 
-Videos
+- Images
+- Documents
+- Videos
+- Audio
 
-Audio
+File extensions are mapped using configuration from `config.json`.
 
-File types are mapped using configuration from config.json.
+### Duplicate Detection
 
-Duplicate Detection
+- Uses content-based hashing
+- Identifies files with identical content
+- Supports duplicate movement to a `Duplicates` folder
+- Includes optional dry-run mode for safe execution
 
-Uses content-based hashing
+### Dry Run Mode
 
-Identifies files with identical content
+Safely preview operations without modifying files.
 
-Supports duplicate movement to a Duplicates folder
-
-Optional dry-run mode for safe testing
-
-Dry Run Mode
-
-Run safely without modifying files:
-
+```bash
 python main.py --path test_files --remove-duplicates --dry-run
+```
 
-
-This shows what would happen without actually moving files.
-
-Execution Reporting
+### Execution Reporting
 
 Generates structured reports inside:
 
+```bash
 reports/
+```
 
+Reports include:
 
-Report includes:
+- Total files scanned
+- Files moved
+- Folders created
+- Unknown files
+- Total duplicates found
+- Duplicates moved
 
-Total files scanned
+### Logging
 
-Files moved
+Structured logging using Python's logging module:
 
-Folders created
+- INFO
+- WARNING
+- ERROR
 
-Unknown files
+---
 
-Total duplicates found
+## Project Structure
 
-Duplicates moved
-
-Logging
-
-Structured logging system using Python logging module:
-
-INFO
-
-WARNING
-
-ERROR
-
-Project Structure
+```bash
 intelligent_file_organizer/
 │
 ├── organizer/
@@ -101,48 +91,70 @@ intelligent_file_organizer/
 ├── main.py
 ├── requirements.txt
 └── README.md
+```
 
-Installation
-1. Clone the repository
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
 git clone https://github.com/pavan123chinta/intelligent_file_organizer.git
 cd intelligent_file_organizer
+```
 
-2. Create virtual environment (Recommended)
+### Create Virtual Environment
+
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
-3. Install dependencies
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-Usage
-Basic Run
+---
+
+## Usage
+
+### Basic Run
+
+```bash
 python main.py --path test_files
+```
 
-Remove Duplicates
+### Remove Duplicates
+
+```bash
 python main.py --path test_files --remove-duplicates
+```
 
-Safe Mode (Dry Run)
+### Safe Mode (Dry Run)
+
+```bash
 python main.py --path test_files --remove-duplicates --dry-run
+```
 
-Technical Concepts Demonstrated
+---
 
-File handling and OS operations
+## Technical Concepts Demonstrated
 
-Directory traversal
+- File handling and OS operations
+- Directory traversal
+- Hash-based duplicate detection
+- CLI argument parsing using argparse
+- Logging configuration
+- Report generation
+- Modular architecture
+- Version control using Git
 
-Hash-based duplicate detection
+---
 
-CLI argument parsing using argparse
+## Author
 
-Logging configuration
-
-Report generation
-
-Modular architecture
-
-Version control using Git
-
-Author
-
-Pavan Chinta
+**Pavan Chinta**  
 QA Automation Engineer | Python Automation | API & UI Testing
